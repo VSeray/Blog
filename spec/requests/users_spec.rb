@@ -6,14 +6,14 @@ RSpec.describe 'Users', type: :request do
       get '/users/'
       expect(response).to have_http_status(:success)
       expect(response).to render_template(:index)
-      expect(response.body).to include('Here is list of users')
+      expect(response.body).to include('Here is a page for showing list of users')
     end
 
     it 'return show page' do
       get '/users/show'
       expect(response).to have_http_status(:success)
       expect(response).to render_template(:show)
-      expect(response.body).to include('Here is info about user')
+      expect(response.body).to include('Here is a page for showing user details')
     end
   end
 end

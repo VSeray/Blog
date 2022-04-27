@@ -1,5 +1,4 @@
 require 'rails_helper'
-require 'rspec/rails'
 
 RSpec.describe 'Posts', type: :request do
   describe 'GET /index' do
@@ -7,7 +6,7 @@ RSpec.describe 'Posts', type: :request do
       get '/users/0/posts'
       expect(response).to have_http_status(:success)
       expect(response).to render_template(:index)
-      expect(response.body).to include('Here is list of posts')
+      expect(response.body).to include('Here is a page for showing list for post for a given user')
     end
 
     describe 'GET /show' do
@@ -15,7 +14,7 @@ RSpec.describe 'Posts', type: :request do
         get '/users/0/posts/show'
         expect(response).to have_http_status(:success)
         expect(response).to render_template(:show)
-        expect(response.body).to include('Here is list of all posts for one user')
+        expect(response.body).to include('Here is a page for showing a post in detail and its comments')
       end
     end
   end

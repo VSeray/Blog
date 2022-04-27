@@ -6,12 +6,17 @@
 #
 default: &default
   adapter: postgresql
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  encoding: unicode
+  pool: 5
   timeout: 5000
+  socket: /tmp/.s.PGSQL.5432
+  username: postgres
+  password: postgres
+
 
 development:
   <<: *default
-  database: blog_development
+  database: blog_devolopment
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -23,3 +28,4 @@ test:
 production:
   <<: *default
   database: blog_production
+

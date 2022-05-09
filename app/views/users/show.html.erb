@@ -14,7 +14,9 @@
     <p class="bio"><%= @user.bio%></p>
   </div>
 </div>
-
+<div>
+  <%= link_to "New post", new_user_post_path(@user) %>
+</div>
 <% @user.recent_post do |post| %>
   <div class="comment_con">
       <h2><%= post.title%></h2>

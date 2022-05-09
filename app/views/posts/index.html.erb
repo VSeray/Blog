@@ -10,7 +10,7 @@
 
   </div>
 
-
+<%= link_to "New post", new_user_post_path(@user) %>
 
 
 <% @posts.each do |post| %>
@@ -33,7 +33,7 @@
 
     <% post.recent_5_comments.each do |comment| %>
 
-       <h2><%= comment.user.name%>: <%= comment.text%></h2>
+       <h2><%= comment.author.name%>: <%= comment.text%></h2>
     <%end%>
   </div>
 <%end%>

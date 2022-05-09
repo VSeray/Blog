@@ -5,9 +5,8 @@
       <ul class="nav navbar-nav navbar-right">
       <% if user_signed_in? %>
           <li><%= link_to "Home", root_path %></li>
-          <li></li>
           <li><%= link_to "All posts", user_posts_path(current_user) %></li>
-          <li><%= button_to "Sign out", destroy_user_session_path, method: :delete, class: "logout"%></li>
+          <%= button_to "Sign out", destroy_user_session_path, method: :delete, class: "logout"%>
         <%end%>
         </ul>
     </nav>

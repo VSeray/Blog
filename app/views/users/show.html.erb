@@ -15,7 +15,7 @@
   </div>
 </div>
 <div>
-  <%= link_to "New post", new_user_post_path(@user) %>
+  <%= link_to "New post", new_post_path(current_user) %>
 </div>
 <% @user.recent_post do |post| %>
   <div class="comment_con">

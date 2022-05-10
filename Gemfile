@@ -68,6 +68,7 @@ end
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem 'bootstrap-sass'
+  gem 'cancancan'
   gem 'capybara'
   gem 'devise'
   gem 'rspec-rails'

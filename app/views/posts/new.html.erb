@@ -1,5 +1,5 @@
 <h1 class ="post-create-header">Create a post</h1>
-<%= form_with model: [ @user, @user.posts.build ], method: :post, local: true do |form| %>
+<%= form_with model: [ @user, @user.posts.build ] do |form| %>
 <div class="form-container d-flex">
 	<section class="title-section from-input d-flex">
 		<%= form.label :title, "Title", class: "label" %>

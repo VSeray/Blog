@@ -1,6 +1,8 @@
 class PostsController < ApplicationController
+  skip_before_action :authenticate_user!, only: %i[index show]
+
   def index
-    @user = User.find(params[:user_id])
+    @user = current_user
     @posts = @user.posts.includes(:comments)
   end
 
@@ -11,7 +13,7 @@ class PostsController < ApplicationController
   end
 
   def new
-    @user = User.find(params[:user_id])
+    @user = current_user
     @post = Post.new
   end
 
@@ -30,6 +32,16 @@ class PostsController < ApplicationController
         end
       end
     end
+  end
+
+  def destroy
+    post = Post.find(params[:id])
+    user = User.find(params[:user_id])
+    user.posts_counter -= 1
+    post.destroy
+    user.save
+    flash[:success] = 'You have deleted this post!'
+    redirect_to user_path(current_user.id)
   end
 
   private

@@ -3,10 +3,10 @@ require 'rails_helper'
 RSpec.describe 'Login', type: :feature do
   describe 'User' do
     before(:each) do
-      @user1 = User.create! name: 'Vana', password: 'Vseray47', email: 'vanaseraydarian123@gmail.com', confirmed_at: Time.now
+      @user1 = User.create! name: 'Vana', password: 'Vseray47', email: 'vanaseray@gmail.com', confirmed_at: Time.now
       @user2 = User.create! name: 'Tekle', password: '123456', email: 'tekle@gmail.com', confirmed_at: Time.now
       visit root_path
-      fill_in 'Email', with: 'vanaseraydarian123@gmail.com'
+      fill_in 'Email', with: 'vanaseray@gmail.com'
       fill_in 'Password', with: 'Vseray47'
       click_button 'Log in'
       visit root_path

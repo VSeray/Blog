@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'Login', type: :feature do
   describe 'login' do
     before(:each) do
-      User.create! name: 'Vana', password: 'Vseray47', email: 'vanaseraydarian123@gmail.com', confirmed_at: Time.now
+      User.create! name: 'Vana', password: 'Vseray47', email: 'vanaseray@gmail.com', confirmed_at: Time.now
     end
     it 'shows the right content' do
       visit new_user_session_path
@@ -37,7 +37,7 @@ RSpec.describe 'Login', type: :feature do
     it 'Fill email and password inputs' do
       visit new_user_session_path
       sleep(1)
-      fill_in 'Email', with: 'vanaseraydarian123@gmail.com'
+      fill_in 'Email', with: 'vanaseray@gmail.com'
       fill_in 'Password', with: 'Vseray47'
       sleep(1)
       click_button 'Log in'

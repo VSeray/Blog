@@ -4,11 +4,11 @@ RSpec.describe 'Login', type: :feature do
   describe 'User' do
     before(:each) do
       @user1 = User.create(name: 'Vana', password: 'Vseray47', bio: 'I am full-stack dev',
-                           email: 'vanaseraydarian123@gmail.com', confirmed_at: Time.now)
+                           email: 'vanaseray@gmail.com', confirmed_at: Time.now)
       @user2 = User.create(name: 'Steve', password: '12345', bio: 'My name is Steve',
                            email: 'steve@gmail.com', confirmed_at: Time.now)
       visit root_path
-      fill_in 'Email', with: 'vanaseraydarian123@gmail.com'
+      fill_in 'Email', with: 'vanaseray@gmail.com'
       fill_in 'Password', with: 'Vseray47'
       click_button 'Log in'
 
